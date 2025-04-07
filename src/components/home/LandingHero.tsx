@@ -69,9 +69,9 @@ export default function LandingHero({
         className="absolute top-6 text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
       >
         Brought to you by{" "}
-        <span className="inline-block underline underline-offset-4 min-w-[14ch] text-left text-nowrap">
-          {displayText}
-          <span className="animate-pulse">|</span>
+        <span className="inline-block  min-w-[14ch] text-left text-nowrap">
+          <span className="underline underline-offset-4">{displayText}</span>
+          <span className="animate-caret-blink select-none">|</span>
         </span>
       </a>
 
@@ -108,7 +108,7 @@ export default function LandingHero({
       {/* Description */}
       <div className="max-w-xl mt-10 mx-auto md:mx-0 text-center font-mono text-sm text-muted-foreground opacity-90 dark:opacity-60 min-h-[4.5rem]">
         <span>{typedText}</span>
-        <span className="blink">|</span>
+        <span className="animate-caret-blink select-none">|</span>
       </div>
 
       {/* Scroll indicator */}
