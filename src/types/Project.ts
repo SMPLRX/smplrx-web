@@ -22,7 +22,7 @@ export type DevStatus = (typeof DEV_STATUSES)[number];
 
 export const PROJECT_STATUS_MAP: Record<ProjectStatus, DevStatus> = {
   Planned: "Todo",
-  "Not Scheduled": "Backlog", // clearly means "someday maybe"
+  "Not Scheduled": "Backlog",
   "Coming Soon": "In Review",
   "In Progress": "In Progress",
   Done: "Done",

@@ -15,30 +15,21 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       status: "In Progress",
       description:
         "Automatically detect whether a sample is a loop or one-shot.",
-      progress: {
-        "In Progress": ["Build classification UI", "Envelope analysis logic"],
-        Todo: ["Drag and drop upload", "Audio preview"],
-        Done: ["Base model integration"],
-      },
+      progress: {},
     },
     {
       name: "Tagger",
       type: "Tool",
       status: "Coming Soon",
       description: "Assign tags like tempo, pitch, instrument, and mood.",
-      progress: {
-        "In Review": [],
-        Todo: ["Design tagging UI", "Integrate audio embedding model"],
-      },
+      progress: {},
     },
     {
       name: "Generator",
       type: "Tool",
       status: "Not Scheduled",
       description: "Generate new samples using AI-based transformations.",
-      progress: {
-        Deferred: ["Define augmentation pipeline", "Model research"],
-      },
+      progress: {},
     },
     {
       name: "SAMPLX (Desktop)",
@@ -46,10 +37,7 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       status: "In Progress",
       description:
         "A standalone app to manage, preview, and process your sample library.",
-      progress: {
-        "In Progress": ["Design main UI", "Library import/export"],
-        Todo: ["Drag-and-drop sample analysis", "Batch tagging"],
-      },
+      progress: {},
     },
     {
       name: "SAMPLX (VST Plugin)",
@@ -57,9 +45,7 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       status: "Planned",
       description:
         "A plugin version of the sample manager for use inside your DAW.",
-      progress: {
-        Todo: ["Define audio routing", "DAW compatibility research"],
-      },
+      progress: {},
     },
     {
       name: "SAMPLX Companion",
@@ -67,9 +53,7 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       status: "Not Scheduled",
       description:
         "Manage cloud-stored samples and record ideas from your phone.",
-      progress: {
-        Deferred: ["Audio recorder module", "Cloud sync integration"],
-      },
+      progress: {},
     },
   ],
   selectedProject: null,
