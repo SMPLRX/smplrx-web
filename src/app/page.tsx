@@ -1,6 +1,6 @@
 import LandingHero from "@/components/home/LandingHero";
 // import ScrollProgress from "@/components/home/ScrollProgress";
-import ToolsSection from "@/components/home/ToolsSection";
+import ProjectsSection from "@/components/home/ProjectsSection";
 import UseCases from "@/components/home/UseCases";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       {/* <ScrollProgress /> */}
       <LandingHero learnMoreTag="#use-cases" />
       <UseCases />
-      <ToolsSection />
+      <ProjectsSection />
     </main>
   );
 }
