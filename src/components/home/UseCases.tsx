@@ -44,7 +44,7 @@ export default function UseCases() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.4 }}
-            className="p-6 border border-border rounded-xl bg-muted/40 shadow-sm text-center"
+            className="p-6 border border-border rounded-xl bg-muted/70 shadow-sm text-center hover:bg-white/60 hover:dark:bg-zinc-900/60"
           >
             <div className="text-3xl mb-2">{emoji}</div>
             <h3 className="text-xl font-semibold">{title}</h3>
