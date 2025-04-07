@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <motion.button
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.97 }}
-          className="w-full p-6 text-left rounded-xl border border-border bg-muted/40 shadow-sm transition-all hover:bg-zinc-100/10"
+          className="w-full p-6 text-left rounded-xl border border-border bg-muted/70 shadow-sm transition-all hover:bg-white/60 hover:dark:bg-zinc-900/60"
         >
           <div className="flex items-start justify-between mb-2">
             <h3 className="text-xl font-semibold">{project.name}</h3>
