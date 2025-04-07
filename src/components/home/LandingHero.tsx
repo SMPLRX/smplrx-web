@@ -10,6 +10,10 @@ const TYPING_SPEED = 200;
 const BACKSPACE_SPEED = 100;
 const POST_TYPE_DELAY = 5000;
 
+const description =
+  "SMPLRX is an AI-powered suite of tools for sample classification, tagging, generation, and intelligent library management — available across desktop, plugin, and mobile.";
+const DESC_TYPING_SPEED = 50;
+
 export default function LandingHero({
   learnMoreTag,
 }: {
@@ -18,6 +22,17 @@ export default function LandingHero({
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [deleting, setDeleting] = useState(false);
+  const [typedText, setTypedText] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedText(description.slice(0, i + 1));
+      i++;
+      if (i >= description.length) clearInterval(interval);
+    }, DESC_TYPING_SPEED);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -65,7 +80,7 @@ export default function LandingHero({
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12"
+        className="flex flex-col xl:flex-row items-center justify-center gap-10 mt-12"
       >
         <Image
           src="/assets/logo-transparent-bg.png"
@@ -74,16 +89,27 @@ export default function LandingHero({
           height={10000}
           className="w-150 h-150"
         />
-        <div>
+        <div className="text-center md:text-left">
           <h1 className="text-8xl md:text-10xl font-bold tracking-tight text-center md:text-left">
             SMPLRX
           </h1>
+
+          <p className="text-muted-foreground italic text-sm md:text-base mt-1">
+            /ˈsæmplər ɛks/ — pronounced “Sampler-Ex”
+          </p>
+
           <p className="max-w-xl text-lg text-muted-foreground mt-4 text-center md:text-left">
-            An AI-powered audio sample toolkit — intelligently identify,
-            classify and generate samples, and unlock your library’s potential.
+            Built for producers, designers, and developers — SMPLRX helps you
+            organize, understand, and create samples faster.
           </p>
         </div>
       </motion.div>
+
+      {/* Description */}
+      <div className="max-w-xl mt-10 mx-auto md:mx-0 text-center font-mono text-sm text-muted-foreground opacity-90 dark:opacity-60 min-h-[4.5rem]">
+        <span>{typedText}</span>
+        <span className="blink">|</span>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div
