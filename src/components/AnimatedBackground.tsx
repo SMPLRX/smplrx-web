@@ -58,8 +58,9 @@ export default function AnimatedBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Set grid color based on theme
-      const gridColor =
-        theme === "dark" ? "rgba(0, 100, 255, 0.1)" : "rgba(0, 0, 0, 0.1)";
+      const gridColor = getComputedStyle(document.documentElement)
+        .getPropertyValue("--background-grid")
+        .trim();
       ctx.strokeStyle = gridColor;
       ctx.lineWidth = 1;
 
@@ -125,7 +126,6 @@ export default function AnimatedBackground() {
   }, [theme]);
 
   // Choose overlay color based on theme
-  const overlayColor = theme === "dark" ? "black" : "white";
 
   return (
     <>
@@ -138,17 +138,16 @@ export default function AnimatedBackground() {
         <div
           className="fixed inset-0 pointer-events-none -z-5"
           style={{
-            // The key is having two stops: 
+            // The key is having two stops:
             //   0% → overlayColor
             //   FADE_EDGE% → still overlayColor
             //   FADE_END% → fully transparent
             background: `
-              linear-gradient(to right, ${overlayColor} 0%, ${overlayColor} ${FADE_EDGE}%, transparent ${FADE_END}%),
-              linear-gradient(to left, ${overlayColor} 0%, ${overlayColor} ${FADE_EDGE}%, transparent ${FADE_END}%),
-              linear-gradient(to bottom, ${overlayColor} 0%, ${overlayColor} ${FADE_EDGE}%, transparent ${FADE_END}%),
-              linear-gradient(to top, ${overlayColor} 0%, ${overlayColor} ${FADE_EDGE}%, transparent ${FADE_END}%)
+              linear-gradient(to right, var(--background) 0%, var(--background) ${FADE_EDGE}%, transparent ${FADE_END}%),
+              linear-gradient(to left, var(--background) 0%, var(--background) ${FADE_EDGE}%, transparent ${FADE_END}%),
+              linear-gradient(to bottom, var(--background) 0%, var(--background) ${FADE_EDGE}%, transparent ${FADE_END}%),
+              linear-gradient(to top, var(--background) 0%, var(--background) ${FADE_EDGE}%, transparent ${FADE_END}%)
             `,
-            backgroundBlendMode: "multiply",
           }}
         />
       )}
