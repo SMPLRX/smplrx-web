@@ -1,14 +1,17 @@
 import { useProjectStore } from "@/stores/projectStore";
 import { DEV_STATUSES, Project } from "@/types/Project";
 import { motion } from "framer-motion";
-import { Badge } from "../ui/badge";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "../ui/dialog";
+import { Button } from "../ui/button";
+import { Plus } from "lucide-react";
+import { toast } from "sonner";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const selectedProject = useProjectStore((s) => s.selectedProject);
@@ -27,7 +30,6 @@ export default function ProjectCard({ project }: { project: Project }) {
         >
           <div className="flex items-start justify-between mb-2">
             <h3 className="text-xl font-semibold">{project.name}</h3>
-            <Badge variant="outline">{project.status}</Badge>
           </div>
           <p className="text-sm text-muted-foreground">{project.description}</p>
         </motion.button>
@@ -47,7 +49,9 @@ export default function ProjectCard({ project }: { project: Project }) {
               key={col}
               className="bg-muted/30 p-3 rounded-lg border border-border flex flex-col"
             >
-              <h4 className="font-semibold mb-2 text-center">{col}</h4>
+              <h4 className="font-semibold mb-2 text-center whitespace-nowrap">
+                {col}
+              </h4>
               <ul className="space-y-1 flex-grow">
                 {selectedProject?.progress[col]?.length ? (
                   selectedProject.progress[col].map((task, i) => (
@@ -67,6 +71,24 @@ export default function ProjectCard({ project }: { project: Project }) {
             </div>
           ))}
         </div>
+        <DialogClose asChild>
+          <Button
+            className="self-end w-fit justify-self-end hover:bg-zinc-200/60 hover:border-1 hover:border-zinc-400/60"
+            variant="outline"
+            onClick={() => {
+              toast.info("Feature request coming soon!", {
+                description: "For now, go to our GitHub to request a feature.",
+                action: {
+                  label: "GitHub",
+                  onClick: () =>
+                    window.open("https://github.com/SMPLRX", "_blank"),
+                },
+              });
+            }}
+          >
+            <Plus /> Request a Feature
+          </Button>
+        </DialogClose>
       </DialogContent>
     </Dialog>
   );

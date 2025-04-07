@@ -11,11 +11,11 @@ export const PROJECT_STATUSES = [
 export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
 
 export const DEV_STATUSES = [
+  "Backlog",
   "Todo",
   "In Progress",
   "In Review",
   "Done",
-  "Backlog",
 ] as const;
 
 export type DevStatus = (typeof DEV_STATUSES)[number];
