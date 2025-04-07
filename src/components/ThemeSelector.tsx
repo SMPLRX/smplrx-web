@@ -9,8 +9,8 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, Laptop, Cog, Check, Plus } from "lucide-react";
-import { toast } from "sonner"; // optional notification popup
+import { Sun, Moon, Laptop, Cog, Plus } from "lucide-react";
+import { toast } from "sonner";
 import clsx from "clsx";
 
 // List of themes and their swatches

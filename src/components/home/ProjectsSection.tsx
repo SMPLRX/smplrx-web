@@ -22,14 +22,18 @@ export default function ProjectsSection() {
         Click any item below to learn more and view live development progress.
       </p>
 
-      <h3 className="text-lg font-semibold mb-2 mt-8">Core Tools</h3>
+      <h3 className="text-lg font-semibold mb-4 mt-8 text-center">
+        Core Tools
+      </h3>
       <div className="grid md:grid-cols-3 gap-6">
         {tools.map((project) => (
           <ProjectCard project={project} key={project.name} />
         ))}
       </div>
 
-      <h3 className="text-lg font-semibold mb-2 mt-8">Applications</h3>
+      <h3 className="text-lg font-semibold mb-4 mt-8 text-center">
+        Applications
+      </h3>
       <div className="grid md:grid-cols-3 gap-6">
         {applications.map((project) => (
           <ProjectCard project={project} key={project.name} />
