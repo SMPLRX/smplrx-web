@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+import logo from "@smplrx/smplrx-assets/logos/logo-transparent-bg.png";
+
 const names = ["Rishi Khiroya", "Vrish"];
 
 const TYPING_SPEED = 200;
@@ -83,7 +85,7 @@ export default function LandingHero({
         className="flex flex-col xl:flex-row items-center justify-center gap-10 mt-12"
       >
         <Image
-          src="/assets/logo-transparent-bg.png"
+          src={logo}
           alt="SMPLRX Logo"
           width={10000}
           height={10000}
