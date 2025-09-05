@@ -32,7 +32,15 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       progress: {},
     },
     {
-      name: "SAMPLX (Desktop)",
+      name: "SMPLRX (Web App)",
+      type: "Application",
+      status: "In Progress",
+      description:
+        "A web-based sample manager to organize, preview, and process your samples.",
+      progress: {},
+    },
+    {
+      name: "SMPLRX (Desktop)",
       type: "Application",
       status: "In Progress",
       description:
@@ -40,7 +48,7 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       progress: {},
     },
     {
-      name: "SAMPLX (VST Plugin)",
+      name: "SMPLRX (VST Plugin)",
       type: "Application",
       status: "Planned",
       description:
@@ -48,7 +56,7 @@ export const useProjectStore = create<ProjectStore>()((set) => ({
       progress: {},
     },
     {
-      name: "SAMPLX Companion",
+      name: "SMPLRX Companion",
       type: "Application",
       status: "Not Scheduled",
       description:

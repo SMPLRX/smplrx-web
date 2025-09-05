@@ -10,7 +10,7 @@ export default function ProjectsSection() {
   const applications = projects.filter((p) => p.type === "Application");
 
   return (
-    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-6 max-w-[95rem] mx-auto">
       <h2 className="text-4xl font-bold text-center mb-2">
         The SMPLRX Tool Suite
       </h2>
@@ -34,7 +34,7 @@ export default function ProjectsSection() {
       <h3 className="text-lg font-semibold mb-4 mt-8 text-center">
         Applications
       </h3>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
         {applications.map((project) => (
           <ProjectCard project={project} key={project.name} />
         ))}
