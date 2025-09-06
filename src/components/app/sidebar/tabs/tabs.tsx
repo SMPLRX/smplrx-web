@@ -9,7 +9,7 @@ import {
   TagsIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
-export interface Tab {
+export interface TabType {
   label: string;
   icon: (props?: LucideProps) => ReactNode;
   content: ReactNode;
@@ -17,7 +17,7 @@ export interface Tab {
   disabled?: boolean
 }
 
-export const VIEWS: Tab[] = [
+export const VIEWS: TabType[] = [
   {
     label: "Explorer",
     icon: (props?: LucideProps) => <FolderIcon {...props} />,
@@ -35,7 +35,7 @@ export const VIEWS: Tab[] = [
   },
 ];
 
-export const TOOLS: Tab[] = [
+export const TOOLS: TabType[] = [
   {
     label: "Classifier",
     icon: (props?: LucideProps) => <ListFilterIcon {...props} />,

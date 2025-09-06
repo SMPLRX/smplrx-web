@@ -9,7 +9,7 @@ function Search() {
       style={{ borderColor: "var(--mantine-color-blue-5)" }}
     >
       <div className="flex flex-row">
-        <ActionIcon variant="transparent" size={36} className="m-2">
+        <ActionIcon variant="transparent" size={36} className="m-2 ml-3">
           <SearchIcon />
         </ActionIcon>
       </div>

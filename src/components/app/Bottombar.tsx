@@ -10,10 +10,9 @@ function Bottombar() {
       <ActionIcon
         variant="transparent"
         size={30}
-        color="white"
         className="max-w-[2dvw]"
       >
-        <Settings size={32} />
+        <Settings size={32} color="var(--color-zinc-400)"/>
       </ActionIcon>
       <Divider orientation="vertical" color="dark" />
       <div
