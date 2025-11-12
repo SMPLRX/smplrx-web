@@ -1,4 +1,4 @@
-import logo from "@smplrx/smplrx-assets/logos/smplrx_text.png";
+import logo from "@smplrx/smplrx-assets/logos/smplrx.png";
 import Search from "./Search";
 import Tabs from "./Tabs";
 
@@ -13,10 +13,10 @@ function Topbar() {
         <Search />
       </div>
       <button
-        className="pl-2 border-b"
+        className="border-b -mt-2"
         style={{ borderColor: "var(--mantine-color-blue-5)" }}
       >
-        <img src={logo} alt="Logo" width={100} />
+        <img src={logo} alt="Logo" width={120} />
       </button>
     </div>
   );

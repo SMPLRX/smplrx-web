@@ -2,35 +2,38 @@ import {
   BookOpenIcon,
   FolderIcon,
   ListFilterIcon,
-  LucideProps,
   MicIcon,
   SparklesIcon,
   TagIcon,
   TagsIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
+import Explorer from "../../window/explorer/Explorer";
 export interface TabType {
   label: string;
-  icon: (props?: LucideProps) => ReactNode;
+  icon: ReactNode;
   content: ReactNode;
   tooltip?: string;
-  disabled?: boolean
+  disabled?: boolean;
 }
 
 export const VIEWS: TabType[] = [
   {
     label: "Explorer",
-    icon: (props?: LucideProps) => <FolderIcon {...props} />,
-    content: null,
+    icon: <FolderIcon />,
+    tooltip: "Explore your samples",
+    content: <Explorer />,
   },
   {
     label: "Libraries",
-    icon: (props?: LucideProps) => <BookOpenIcon {...props} />,
+    icon: <BookOpenIcon />,
+    tooltip: "Browse your libraries",
     content: null,
   },
   {
     label: "Tags",
-    icon: (props?: LucideProps) => <TagIcon {...props} />,
+    icon: <TagIcon />,
+    tooltip: "Manage your tags",
     content: null,
   },
 ];
@@ -38,22 +41,26 @@ export const VIEWS: TabType[] = [
 export const TOOLS: TabType[] = [
   {
     label: "Classifier",
-    icon: (props?: LucideProps) => <ListFilterIcon {...props} />,
+    icon: <ListFilterIcon />,
+    tooltip: "Classify your samples",
     content: null,
   },
   {
     label: "Tagger",
-    icon: (props?: LucideProps) => <TagsIcon {...props} />,
+    icon: <TagsIcon />,
+    tooltip: "Tag your samples",
     content: null,
   },
   {
     label: "Generator",
-    icon: (props?: LucideProps) => <SparklesIcon {...props} />,
+    icon: <SparklesIcon />,
+    tooltip: "Generate new samples",
     content: null,
   },
   {
     label: "Record",
-    icon: (props?: LucideProps) => <MicIcon {...props} />,
+    icon: <MicIcon />,
+    tooltip: "Record new samples",
     content: null,
   },
 ];

@@ -8,11 +8,7 @@ interface Props {
   onSelect: () => void;
 }
 
-function TabType({
-  tab: { icon, label, tooltip },
-  onSelect,
-  isSelected,
-}: Props) {
+function Tab({ tab: { icon, label, tooltip }, onSelect, isSelected }: Props) {
   return (
     <div className="flex w-full justify-center">
       <Tooltip
@@ -22,8 +18,8 @@ function TabType({
         position="right"
         label={
           <div>
-            <h3>{label}</h3>
-            <p>{tooltip}</p>
+            <h3 className="font-bold">{label}</h3>
+            <p className="text-zinc-300 italic">{tooltip}</p>
           </div>
         }
       >
@@ -59,13 +55,18 @@ function TabType({
             backgroundColor: isSelected
               ? "var(--color-zinc-950)"
               : "transparent",
+
+            "&:hover": {
+              cursor: "pointer",
+              color: "var(--mantine-color-blue-6)",
+            },
           }}
         >
-          {icon()}
+          {icon}
         </button>
       </Tooltip>
     </div>
   );
 }
 
-export default TabType;
+export default Tab;
